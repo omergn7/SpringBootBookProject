@@ -1,0 +1,283 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    min-height: 100vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+header {
+    background: linear-gradient(90deg, #8e44ad, #2980b9);
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+
+header .logo h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f8f8f8;
+}
+
+.hero h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.hero button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #8e44ad;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.hero button:hover {
+    background-color: #8e44ad;
+}
+
+.book-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.book-item {
+    background-color: #fff;
+    padding: 15px;
+    margin: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 200px;
+    text-align: center;
+}
+
+.book-item img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+main {
+    flex: 1;
+}
+
+footer {
+    background-color: #2980b9;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    width: 100%;
+}
+
+/* Slayt Stilleri */
+.slider {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+    overflow: hidden;
+    background-color: #000;
+    height: auto;
+    aspect-ratio: 16/9; /* Oranı korur, yüksekliği genişliğe göre ayarlar */
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    vertical-align: middle;
+}
+
+
+/* Buton Stilleri */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.prev {
+    left: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.next {
+    right: 0;
+    border-radius: 0 3px 3px 0;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+@media (max-width: 768px) {
+    .slider {
+        aspect-ratio: 4/3;
+    }
+
+    .prev, .next {
+        font-size: 16px;
+        padding: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .slider {
+        aspect-ratio: 1/1; /* Kare oranı (mobil için) */
+    }
+
+    .prev, .next {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+
+
+/* Kullanıcı Menüsü Stilleri */
+.user-menu {
+    position: relative;
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.user-name {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.user-name i {
+    margin-right: 5px;
+}
+
+.user-sub-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #fff;
+    min-width: 150px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.user-sub-menu.show {
+    display: block;
+}
+
+.user-sub-menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.user-sub-menu ul li {
+    border-bottom: 1px solid #f1f1f1;
+}
+
+.user-sub-menu ul li:last-child {
+    border-bottom: none;
+}
+
+.user-sub-menu ul li a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.user-sub-menu ul li a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Diğer stil düzenlemeleri */
+.auth-section, .favorites-cart-section {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.favorites-button, .cart-button {
+    margin-left: 20px;
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.favorites-button i, .cart-button i {
+    margin-right: 5px;
+}
+
+.glowing-btn {
+    background-color: #ff6f61;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.glowing-btn:hover {
+    background-color: #ff3b2f;
+}
+

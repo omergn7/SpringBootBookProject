@@ -1,0 +1,45 @@
+/* Genel gövde ayarları */
+body {
+    font-family: Arial, sans-serif; /* Yazı tipi */
+    background-color: #f4f4f4; /* Arka plan rengi */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Başlık ayarları */
+h1 {
+    color: #333;
+    margin-top: 20px;
+}
+
+/* Profil bilgileri konteyneri */
+div {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Etiket ayarları */
+label {
+    font-weight: bold;
+    color: #555;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Bilgi alanı ayarları */
+span {
+    color: #333;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Ekstra

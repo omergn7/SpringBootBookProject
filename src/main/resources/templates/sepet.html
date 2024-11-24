@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="tr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <script src="https://kit.fontawesome.com/628c8d2499.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sepet Sayfası</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+    <link rel="stylesheet" th:href="@{/CSS/sepet.css}" type="text/css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kitap Detayı</title>
+    <style>
+
+    </style>
+</head>
+<body>
+
+
+
+<div class="card">
+    <div class="row">
+        <div class="col-md-8 sepet">
+            <div class="title">
+                <div class="row">
+                    <div class="col"><h4><b>Shopping Cart</b></h4></div>
+                    <div class="col align-self-center text-right text-muted" th:text="${siparisDetaylar.size()} + ' items'">3 items</div>
+                </div>
+            </div>
+
+            <div class="row border-top border-bottom" th:each="detay : ${siparisDetaylar}">
+                <div class="row main align-items-center">
+                    <div class="col-2"><img class="img-fluid" th:src="@{${detay.kitapId.imageUrl}}" alt="Kitap Resmi"></div>
+                    <div class="col">
+                        <div class="row text-muted" th:text="${detay.kitapId.kategori}">Kategori</div>
+                        <div class="row" th:text="${detay.kitapId.baslik}">Kitap Başlığı</div>
+                    </div>
+                    <div class="col">
+                        <a href="#">-</a><a href="#" class="border" th:text="${detay.adet}">1</a><a href="#">+</a>
+                    </div>
+                    <div class="col" th:text="'&euro; ' + ${detay.fiyat}">Fiyat</div>
+                </div>
+            </div>
+
+            <div class="back-to-shop"><a href="#">&leftarrow;</a><span class="text-muted">Alışverişe Dön</span></div>
+        </div>
+        <div class="col-md-4 summary">
+            <div><h5><b>Summary</b></h5></div>
+            <hr>
+            <div class="row">
+                <div class="col" style="padding-left:0;" th:text="'ITEMS ' + ${siparisDetaylar.size()}">ITEMS 3</div>
+                <div class="col text-right" th:text="'&euro; ' + ${siparisDetaylar.stream().mapToDouble(detay -> detay.getFiyat().doubleValue() * detay.getAdet()).sum()}">Toplam Fiyat</div>
+            </div>
+            <!-- Diğer özet detayları -->
+            <button class="btn">Ödeme Ekranına Geç</button>
+        </div>
+    </div>
+</div>
+
+
+
+
+</body>
+</html>

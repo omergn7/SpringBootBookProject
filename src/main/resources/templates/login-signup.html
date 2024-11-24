@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="tr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Sign Up</title>
+    <link rel="stylesheet" th:href="@{/CSS/login.css}">
+</head>
+<body>
+<div class="container">
+    <div class="form-box">
+        <div class="button-box">
+            <button type="button" class="toggle-btn" onclick="login()">Login</button>
+            <button type="button" class="toggle-btn" onclick="signup()">Sign Up</button>
+            <div id="btn"></div>
+        </div>
+        <form id="loginForm" class="input-group active" th:action="@{/login}" method="POST">
+            <h1>Login</h1>
+            <input type="text" class="input-field" name="email" placeholder="email" required>
+            <input type="password" class="input-field" name="parola" placeholder="parola" required>
+            <div class="checkbox-group">
+                <input type="checkbox" id="rememberMe" name="rememberMe">
+                <label for="rememberMe">Remember Me</label>
+            </div>
+            <button type="submit" class="submit-btn">Login</button>
+            <div class="error-message" id="error-message" th:if="${param.error}" style="display: block; color: red; font-size: 14px; margin-top: 10px;">
+                Invalid username or password.
+            </div>
+        </form>
+        <form id="signupForm" class="input-group" th:action="@{/signup}" method="POST">
+            <h1>Sign Up</h1>
+            <input type="text" class="input-field" name="isim" placeholder="isim" required>
+            <input type="email" class="input-field" name="email" placeholder="email" required>
+            <input type="password" class="input-field" name="parola" placeholder="parola" required>
+            <button type="submit" class="submit-btn">Sign Up</button>
+        </form>
+    </div>
+</div>
+<script th:src="@{/JS/script2.js}"></script>
+<script>
+    function login() {
+        document.getElementById("loginForm").style.left = "50px";
+        document.getElementById("signupForm").style.left = "450px";
+        document.getElementById("btn").style.left = "0px";
+    }
+
+    function signup() {
+        document.getElementById("loginForm").style.left = "-400px";
+        document.getElementById("signupForm").style.left = "50px";
+        document.getElementById("btn").style.left = "110px";
+    }
+</script>
+</body>
+</html>

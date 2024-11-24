@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Profilim</title>
+  <link rel="stylesheet" href="/css/styleprofile.css"> <!-- CSS dosyanız -->
+</head>
+<body>
+<h1>Profilim</h1>
+<div>
+  <label>İsim:</label>
+  <span th:text="${kullanici.isim}">Kullanıcı İsmi</span>
+</div>
+<div>
+  <label>Soyisim:</label>
+  <span th:text="${kullanici.soyisim}">Kullanıcı Soyismi</span>
+</div>
+<div>
+  <label>Email:</label>
+  <span th:text="${kullanici.email}">Kullanıcı Email</span>
+</div>
+<div>
+  <label>Telefon Numarası:</label>
+  <span th:text="${kullanici.telNo}">Telefon Numarası</span>
+</div>
+</body>
+</html>
